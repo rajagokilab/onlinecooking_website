@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <header class="flex flex-col md:flex-row items-center justify-between p-8 md:p-16 md:gap-8 h-[550px] max-w-screen-xl mx-auto">
+         <div class="md:w-1/2 w-full h-full text-center md:text-left flex flex-col justify-center items-center md:items-start bg-gradient-to-b from-[#A7C957] to-white rounded-[2rem] shadow-lg p-8 md:p-12 mb-8 md:mb-0">
+            <!-- Main headline with a large, bold font -->
+            <h1 class="text-2xl md:text-4xl font-bold mb-4 leading-tight">MORE POWER TO YOUR COOKING! THROUGH LEARNING</h1>
+
+            <!-- Paragraph describing the course benefits -->
+            <p class="text-gray-600 mb-6 max-w-lg">Discover A Better Way Of Cooking Amazing Dishes With Recipes Specially Curated By The Most Celebrated Face In The Indian Cuisine.</p>
+
+         <a href="{{ url_for('courses') }}" class="z-10 mt-8">
+                <button class="bg-red-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-red-800 transition-colors duration-300">
+                    VIEW COURSES
+                </button>
+            </a>
+            </div>
+            <!-- Placeholder Image for Hero -->
+            <div class="md:w-1/2 w-full h-full rounded-[2rem] overflow-hidden shadow-lg">
+            <!-- The image of the chefs. Using a placeholder for the image URL. -->
+            <!-- 'h-full' on the image ensures it fills the parent div's height -->
+            <!-- Added onerror to provide a fallback placeholder image for better robustness -->
+            <img src="/static/images/7.png" alt="Chefs cooking in a kitchen" class="w-full h-full object-cover rounded-[2rem]" onerror="this.onerror=null;this.src='https://placehold.co/800x550/E0E0E0/333333?text=Chef+Image+Fallback';">
+        </div>
+    </header>
+
+    <!-- About Us Section -->
+    <section id="about" class="container mx-auto px-8 py-12 lg:py-15 text-center">
+        <h2 class="text-3xl lg:text-4xl font-bold mb-4">ABOUT US</h2>
+        <p class="text-base lg:text-4xl max-w-6xl mx-auto text-gray-700 ">
+Welcome to Flavour theory, your go-to place for delicious recipes, culinary inspiration, and a community of food lovers!
+<br>
+At Flavour theory, we believe that cooking is more than just preparing food-it's about creativity, joy, and bringing people together. Whether you're a seasoned chef or just starting your culinary journey, our mission is to make cooking easy, fun, and accessible to everyone.        </p>
+    </section>
+
+    <!-- Our Story Section -->
+     <section class="story">
+     <!-- Section title moved outside the main container -->
+    <h2 class="text-3xl md:text-4xl font-bold mb-8 text-gray-800 text-center">OUR STORY</h2>
+
+    <!-- Main container for the "Our Story" section -->
+    <!-- Added custom class for background image and overlay -->
+    <section class="max-w-6xl w-full rounded-b-[2rem] shadow-xl p-8 md:p-12 lg:p-16 text-center text-white story-background flex flex-col justify-center items-center relative">
+        
+        <!-- Text content container -->
+        <!-- Content is centered horizontally and vertically within this section -->
+        <div class="z-10"> <!-- z-10 ensures text is above the overlay -->
+            <p class="mb-4 leading-relaxed max-w-md mx-auto text-xl">
+                Our journey began with a passion for food and the desire to share it with others. Flavour theory, a passionate home cook and food enthusiast, started the website to create a space where anyone, no matter their skill level, could discover new recipes, learn helpful cooking tips, and explore a world of flavors.
+            </p>
+            <p class="leading-relaxed max-w-md mx-auto text-xl ">
+                Over the years, our team has grown, but our core values remain the same: to inspire home cooks everywhere to embrace the magic of the kitchen and make every meal a special occasion.
+            </p>
+        </div>
+    </section>
+</section>
+    <!-- What We Offer Section -->
+    <!-- What We Offer Section -->
+    <!-- This section is centered horizontally on the page using 'mx-auto' and has responsive padding -->
+    <section id="what-we-offer" class="container mx-auto px-8 py-12 lg:py-24">
+        <!-- Section heading, centered and bold, now in red color -->
+        <h2 class="text-3xl lg:text-4xl font-bold text-center mb-8 text-black">WHAT WE OFFERS</h2>
+        
+        <!-- Unordered list for the offerings -->
+        <!-- 'max-w-4xl mx-auto' centers the list and limits its width for readability -->
+        <!-- 'list-disc list-inside' creates bullet points inside the text flow -->
+        <ul class="max-w-4xl mx-auto list-disc list-inside space-y-4 text-left text-base lg:text-lg text-gray-700">
+            <li>
+                <!-- Bold text for the recipe title, now in red color -->
+                <span class="font-bold text-red-500">Tasty Recipes:</span> From quick weeknight dinners to indulgent desserts, our recipes cover every occasion and dietary preference. Each recipe is tested and designed to be easy to follow, so you can enjoy the process as much as the result!
+            </li>
+            <li>
+                <!-- Bold text for the cooking tips title, now in red color -->
+                <span class="font-bold text-red-500">Helpful Cooking Tips:</span> Our step-by-step guides, cooking hacks, and ingredient substitutions will help you master new techniques and cook with confidence.
+            </li>
+            <li>
+                <!-- Bold text for the community title, now in red color -->
+                <span class="font-bold text-red-500">Community of Food Lovers:</span> Join our vibrant community of home cooks, share your own recipes, leave reviews, and inspire others. We believe cooking is even more enjoyable when shared!
+            </li>
+        </ul>
+    </section>
+
+    <main class="banner">
+        <section class="py-6">
+            <!-- Added px-4 for padding on left and right -->
+            <div class="px-4">
+                <div class="promo-card mx-auto" style="background-image: url('/static/images/banner.png');">
+                    <div class="promo-overlay"></div>
+
+                    <div class="promo-content">
+                        <h3 class="mt-3 md:text-2xl font mb-5" style="font-size: 40px;">LIMITED PERIOD OFFER:</h3>
+                        <h4 class=" md:text-4xl font-extrabold mb-4 border-b-2 border-white pb-2 inline-block"  style="font-size: 50px;">FREE GIFT WITH EVERY COURSE</h4>
+                        <p class="md: text-gray-300 mt-4 leading-relaxed"  style="font-size: 40px;">
+                            GET ACCESS TO BONUS COURSE WITH PREMIUM RECIPES AND COOK AMAZING DISHES WITH US CRANBERRIES.
+                        </p>
+                        <button id="learnMoreBtn" class="mt-8 bg-red-800 text-white font-semibold py-3 px-8 rounded-full text-xl shadow-lg hover:bg-[#d57b67;] transition-colors duration-300">
+                            LEARN MORE
+                        </button>
+                    </div>
+
+                    <div class="promo-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Our Values Section -->
+    <section class="noodle">
+    <h2 class="text-3xl md:text-4xl font-bold mb-8 text-gray-800 text-center">OUR VALUES</h2>
+
+    <!-- Main container for the "Our Values" section -->
+    <!-- This section uses the background image and centers its content -->
+    <section class="max-w-6xl w-full h-full rounded-[2rem] shadow-xl p-8 md:p-12 lg:p-24 text-center text-white values-background flex flex-col justify-center items-center relative">
+        
+        <!-- Text content container -->
+        <!-- Content is centered horizontally and vertically within this section -->
+        <div class="z-10 text-left"> <!-- z-10 ensures text is above the overlay, text-left for bullet points -->
+            <ul class="list-disc list-inside space-y-4 max-w-xl mx-auto text-4xl">
+                <li>
+                    <span class="font-bold">Simplicity:</span> We keep our recipes simple and approachable, so even beginners can enjoy cooking.
+                </li>
+                <li>
+                    <span class="font-bold">Creativity:</span> We encourage experimenting in the kitchen, mixing ingredients, and discovering new flavors.
+                </li>
+                <!-- Add more values if needed, based on the full image content -->
+            </ul>
+        </div>
+    </section>
+    </section>
+       <!-- Call to Action Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-5xl font-bold mb-4">Homemakers to busy executives, budding chefs to food entrepreneurs, grandparents to moms, health conscious people or foodies - there's a course for all.</h2>
+            <a href="{{ url_for('courses') }}"><button class="bg-red-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-[#d57b67;] transition-colors duration-300 mt-8">VIEW COURSES</button></a>
+        </div>
+    </section>
+{% endblock %}
+

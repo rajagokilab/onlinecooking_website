@@ -1,0 +1,361 @@
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+      
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fcebeb;
+        }
+
+    
+        .hero-image {
+            background-image: url('https://placehold.co/600x400/fff/333?text=Chef');
+            background-size: cover;
+            background-position: center;
+        }
+        .featured-card-overlay {
+              background-image: url('/static/images/14.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            text-align: center;
+            color: white;
+        }
+       .all-courses-card-bg {
+    background-image: url('/static/images/6.png');
+    background-size: cover;
+    background-position: center;
+}
+    
+        .all-courses-text-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 180px;
+        }
+  /* FAQ specific styles */
+    /* FAQ Accordion Styling */
+        .accordion-item {
+            margin-bottom: 1rem; /* Space between rows */
+            border: 1px solid #d4a762; /* Brown shade border */
+            background-color: #ffffff; /* White background for items */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Softer shadow */
+            border-radius: 0.75rem; /* rounded-xl from Tailwind */
+            padding: 1rem; /* p-4 from Tailwind */
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            padding-top: 0;
+            padding-bottom: 0;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        }
+
+        .accordion-content.active {
+            /* max-height will be set by JS dynamically */
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .accordion-header svg {
+            transition: transform 0.3s ease-out;
+        }
+
+        .accordion-header svg.rotate {
+            transform: rotate(180deg);
+        }
+
+        /* Responsive adjustments for the heading */
+        @media (max-width: 767px) { /* Small devices */
+            .text-3xl {
+                font-size: 1.875rem; /* Smaller on mobile */
+            }
+            .sm\:text-4xl {
+                font-size: 2.25rem; /* Slightly larger on small screens */
+            }
+            .lg\:text-5xl {
+                font-size: 3rem; /* Original size on large screens */
+            }
+        }
+
+        /* Custom CSS for the promo card and overlay */
+       
+        .promo-card {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 450px; /* Ensure a minimum height for the banner */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Softer, more spread out shadow */
+            display: flex; /* Use flexbox for content alignment */
+            align-items: center;
+            border-radius: 1rem; /* Equivalent to rounded-2xl */
+            overflow: hidden; /* Ensure content and image stay within bounds */
+        }
+        .banner {
+            /* display: flex; */
+            /* justify-content: center; */
+            /* align-items: center; */
+            min-height: 100vh;
+            margin: 0;
+            box-sizing: border-box;
+            min-width: 100%;
+        }
+
+        .promo-overlay {
+            /* Adjusted gradient to better blend with the black part of the new image */
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.95) 0%, rgba(57, 57, 57, 0.7) 60%, rgba(136, 136, 136, 0) 100%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+        }
+
+        .promo-content {
+            position: relative;
+            z-index: 20; /* Ensure text is above the overlay */
+            padding: 2rem 3rem; /* Adjusted padding for content */
+            max-width: 70%; /* Limit text width to make space for the image part */
+            color: white; /* Ensure text color is white */
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .promo-card {
+                flex-direction: column; /* Stack content vertically on small screens */
+                min-height: 400px; /* Adjust min-height for stacked layout */
+            }
+            .promo-content {
+                max-width: 100%; /* Full width for text on small screens */
+                padding: 1.5rem;
+            }
+        }
+
+        /* New All Courses Section Styles */
+      .course-card {
+            background-image: url('/static/images/2.png');
+            background-size: cover;
+            background-position: center;
+            height: 800px; /* Default height for large screens */
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            padding: 0 10px;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: fadeInUp 0.8s forwards;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            margin-bottom: 24px; /* Added margin for spacing between cards */
+        }
+
+        /* Animation delay for each card */
+        .course-card:nth-child(1) { animation-delay: 0.1s; }
+        .course-card:nth-child(2) { animation-delay: 0.2s; }
+        .course-card:nth-child(3) { animation-delay: 0.3s; }
+        .course-card:nth-child(4) { animation-delay: 0.4s; }
+        .course-card:nth-child(5) { animation-delay: 0.5s; }
+        .course-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .note-content {
+            position: absolute;
+            top: 250px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50%;
+            height: 320px;
+            overflow-y: hidden; /* Changed from auto to hidden to remove scrollbar */
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            font-size: 25px;
+            backdrop-filter: blur(5px);
+            /* color: #333; */
+        }
+
+        .note-content h5 {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1rem; /* Using rem for better scaling */
+        }
+
+        .note-content p {
+            font-size: 1rem;
+        }
+
+        .learn-btn {
+            margin-top: 10px;
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        .learn-btn:hover {
+            background-color: #d9534f;
+            transform: translateX(-50%) scale(1.05);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* --- Media Queries for Responsive Design --- */
+
+        /* Extra small devices (phones, <576px) */
+        @media (max-width: 575.98px) {
+            .course-card {
+                height: 450px;
+            }
+            .note-content {
+                top: 150px;
+                width: 90%;
+                height: 200px;
+            }
+            .note-content h5 {
+                font-size: 1.2rem;
+            }
+            .note-content p {
+                font-size: 0.9rem;
+            }
+            .learn-btn {
+                bottom: 10px;
+            }
+        }
+
+        /* Small devices (tablets, 576px and up) */
+        @media (min-width: 576px) and (max-width: 767.98px) {
+            .course-card {
+                height: 500px;
+            }
+            .note-content {
+                top: 180px;
+                width: 80%;
+                height: 250px;
+            }
+            .note-content h5 {
+                font-size: 1.3rem;
+            }
+            .note-content p {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Medium devices (desktops, 768px and up) */
+        @media (min-width: 768px) and (max-width: 991.98px) {
+            .course-card {
+                height: 600px;
+            }
+            .note-content {
+                top: 200px;
+                width: 70%;
+                height: 280px;
+            }
+        }
+
+        /* Large devices (large desktops, 992px and up) */
+        @media (min-width: 992px) and (max-width: 1199.98px) {
+            .course-card {
+                height: 700px;
+            }
+            .note-content {
+                top: 220px;
+                width: 60%;
+                height: 300px;
+            }
+        }
+/* contact */
+ .flash-message {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+        .flash-message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .flash-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        /* enrolldetails */
+               /* Keyframe animation for fading testimonials */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .testimonial-fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        /* Medium devices (tablets, 641px to 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+    /* General adjustments */
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 2.5rem;
+    }
+    h3 {
+        font-size: 2rem;
+    }
+    .py-20 {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    /* Promo Card section adjustments */
+    .promo-card {
+        flex-direction: row; /* Ensure horizontal layout */
+    }
+    .promo-content {
+        padding: 2.5rem; /* Adjust padding for more space */
+    }
+    .promo-image {
+        height: auto; /* Allow image height to be flexible */
+    }
+
+    /* All Courses section adjustments */
+    .course-card {
+        height: 600px; /* Adjust card height for tablets */
+    }
+    .note-content {
+        top: 200px; /* Adjust position of the note content */
+        width: 70%; /* Increase width for better readability */
+    }
+
+    /* Testimonial section adjustments */
+    .testimonial-card {
+        padding: 1.5rem; /* Ensure consistent padding */
+    }
+}

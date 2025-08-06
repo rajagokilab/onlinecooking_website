@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flavour Theory Signup</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+  <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fefcf5;
+        }
+        /* A simple hover effect for social icons */
+        .social-icon:hover {
+            transform: scale(1.1);
+            transition: transform 0.2s ease-in-out;
+        }
+  </style>
+</head>
+<body class="bg-[#f8f6f3]">
+  <div class="min-h-screen bg-[#f8f6f3] text-[#4f4f4f] font-sans flex flex-col">
+    <!-- Header -->
+    <header class="bg-orange-100 shadow-md p-4 sticky top-0 z-50">
+      <div class="container mx-auto flex justify-between items-center px-4">
+        <div class="flex items-center justify-center">
+          <img src="/static/images/logo.png" alt="Logo" class="rounded-full w-[200px] h-auto" />
+        </div>
+        <nav>
+          <ul class="flex space-x-6 md:space-x-8 items-center text-lg">
+            <li class="hidden sm:block">
+              <a href="/" class="flex flex-col items-center hover:text-[#e79998] transition-colors">
+                <!-- Globe Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                  <path d="M2 12h20"/>
+                </svg>
+                <span class="mt-1 font-semibold">HOME</span>
+              </a>
+            </li>
+            <li>
+              <a href="\login" class="flex flex-col items-center hover:text-[#e79998] transition-colors">
+                <!-- Log In Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-in">
+                  <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+                  <polyline points="10 17 15 12 10 7"/>
+                  <line x1="15" x2="3" y1="12" y2="12"/>
+                </svg>
+                <span class="mt-1 font-semibold">LOGIN</span>
+              </a>
+            </li>
+            <li>
+              <a href="\signup" class="flex flex-col items-center hover:text-[#e79998] transition-colors">
+                <!-- User Plus Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-plus">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <line x1="19" x2="19" y1="8" y2="14"/>
+                  <line x1="22" x2="16" y1="11" y2="11"/>
+                </svg>
+                <span class="mt-1 font-semibold">SIGN UP</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Signup form -->
+    <main class="flex-grow flex items-center justify-center p-4 md:p-8">
+      <div class="bg-[#ffeeca] shadow-lg rounded-2xl p-8 md:p-12 w-full max-w-xl text-center">
+        <h1 class="text-4xl font-bold text-[#8eb065] my-6 tracking-wide">SIGNUP</h1>
+
+        <form id="signup-form" class="space-y-6 md:space-y-8">
+          <div class="text-left">
+            <label for="name" class="text-xl font-semibold text-[#666666]">NAME</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="mt-2 w-full p-4 border border-[#e79998] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8eb065]"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+
+          <div class="text-left">
+            <label for="email" class="text-xl font-semibold text-[#666666]">E MAIL</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="mt-2 w-full p-4 border border-[#e79998] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8eb065]"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+
+          <div class="text-left">
+            <label for="password" class="text-xl font-semibold text-[#666666]">PASSWORD</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="mt-2 w-full p-4 border border-[#e79998] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8eb065]"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+
+          <div class="text-left">
+            <label for="mobile-number" class="text-xl font-semibold text-[#666666]">MOBILE NUMBER</label>
+            <input
+              type="tel"
+              id="mobile-number"
+              name="mobile"
+              class="mt-2 w-full p-4 border border-[#e79998] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8eb065]"
+              placeholder="Enter your mobile number"
+            />
+          </div>
+
+          <button
+            type="submit"
+            id="submit-btn"
+            class="w-full text-white text-lg font-bold py-4 px-6 rounded-xl shadow-lg bg-[#d38b8a] hover:bg-[#c27c7b] transition-colors duration-300 transform hover:scale-105"
+          >
+            SUBMIT
+          </button>
+        </form>
+
+        <p id="message" class="mt-4 font-semibold"></p>
+
+        <div class="mt-8 text-sm md:text-base">
+          <a href="/login" class="text-[#8eb065] hover:underline mx-2 font-semibold">LOGIN</a>
+          <p class="mt-4 text-[#888888] text-sm">
+            By Joining And Using Flavour Theory Academy <br /> Platform, You Agree To Our
+            <a href="#" class="text-[#d38b8a] hover:underline">Terms & Policies</a>
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+      <footer class="bg-amber-700/60 text-white p-8 md:p-12 rounded-xl mt-4 shadow-md">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            
+            <!-- Logo and Description Section -->
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+      <div class="flex items-center justify-center">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="w-[200px] h-auto">
+      </div>
+            </div>
+
+            <!-- Navigation Links Section -->
+            <div class="text-center md:text-left">
+                <h3 class="text-xl font-bold mb-4 uppercase">Home</h3>
+                <ul class="space-y-2">
+                    <li><a href="{{ url_for('about') }}" class="hover:text-gray-200 transition-colors duration-200">About Us</a></li>
+                    <li><a href="{{ url_for('courses') }}" class="hover:text-gray-200 transition-colors duration-200">Programs</a></li>
+                    <li><a href="{{ url_for('courses') }}" class="hover:text-gray-200 transition-colors duration-200">Courses</a></li>
+                </ul>
+            </div>
+
+            <!-- Courses Section -->
+            <div class=" md:text-left">
+                <h3 class="text-xl font-bold mb-4 uppercase">Courses</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-gray-200 transition-colors duration-200">THE GOOD GUT PROGRAM</a></li>
+                    <li><a href="#" class="hover:text-gray-200 transition-colors duration-200">FOOD LOOK GOOD</a></li>
+                    <li><a href="#" class="hover:text-gray-200 transition-colors duration-200">STRAT YOUR BUSINESS FROM HOME-NON VEG & VEG</a></li>
+                    <li><a href="#" class="hover:text-gray-200 transition-colors duration-200">STRAT YOUR FOOD BUSINESS FROM HOME-VEG ONLY</a></li>
+                    <li><a href="#" class="hover:text-gray-200 transition-colors duration-200">IMMUNITY BOOSTER RECIPES</a></li>
+                    <li><a href="#" class="hover:text-gray-200 transition-colors duration-200">INDIA'S FAVOURITES: RESTAURANTS AND HOME STYLE DISHES</a></li>
+                    <li><a href="#" class="hover:text-gray-200 transition-colors duration-200">VEGETARIAN'S DELIGHT</a></li>
+                    <li><a href="#" class="hover:text-gray-200 transition-colors duration-200">GARNISHING & PLATING</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact and Social Media Section -->
+            <div class=" md:text-left">
+                <h3 class="text-xl font-bold mb-4 uppercase">Contact</h3>
+                <ul class="space-y-4 mb-6">
+                    <li class="flex items-center justify-center md:justify-start">
+                        <i class="fas fa-map-marker-alt mr-3"></i>
+                        <span class="text-sm">FLOVER THEORY ACADEMY<br>1234, OLIVE STREET,<br>CHENNAI - 021</span>
+                    </li>
+                    <li class="flex items-center justify-center md:justify-start">
+                        <i class="fas fa-envelope mr-3"></i>
+                        <a href="mailto:info@flovertheoryacademy.in" class="hover:text-gray-200 transition-colors duration-200 text-sm">Info@flovertheoryacademy.in</a>
+                    </li>
+                    <li class="flex items-center justify-center md:justify-start">
+                        <i class="fas fa-phone-alt mr-3"></i>
+                        <span class="text-sm">044-987-6785 5677</span>
+                    </li>
+                </ul>
+
+                <h3 class="text-xl font-bold mb-4 uppercase mt-8">Follow Us</h3>
+                <div class="flex justify-center md:justify-start space-x-6">
+                    <a href="#" class="social-icon text-2xl"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon text-2xl"><i class="fab fa-google"></i></a>
+                    <a href="#" class="social-icon text-2xl"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+  </div>
+
+  <script>
+    const form = document.getElementById('signup-form');
+    const messageEl = document.getElementById('message');
+    const submitBtn = document.getElementById('submit-btn');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Clear previous message
+      messageEl.textContent = '';
+      messageEl.className = 'mt-4 font-semibold';
+
+      // Disable submit button & show loading text
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'LOADING...';
+
+      // Prepare form data
+      const formData = new URLSearchParams();
+      formData.append('username', form.name.value.trim());
+      formData.append('email', form.email.value.trim());
+      formData.append('password', form.password.value);
+      // mobile number is optional; only append if provided
+      if(form['mobile'].value.trim() !== '') {
+        formData.append('mobile', form['mobile'].value.trim());
+      }
+
+      try {
+        const response = await fetch('/signup', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: formData.toString(),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          if(data.success) {
+            messageEl.textContent = 'Account created successfully! You can now log in.';
+            messageEl.classList.add('text-green-600');
+            form.reset();
+          } else {
+            // Possible error from backend (like email already exists)
+            messageEl.textContent = data.message || 'Signup failed. Please try again.';
+            messageEl.classList.add('text-red-600');
+          }
+        } else {
+          // HTTP error code handling
+          messageEl.textContent = data.message || 'Signup failed. Please try again.';
+          messageEl.classList.add('text-red-600');
+        }
+      } catch (error) {
+        messageEl.textContent = 'Error connecting to server. Please try again later.';
+        messageEl.classList.add('text-red-600');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'SUBMIT';
+      }
+    });
+  </script>
+</body>
+</html>

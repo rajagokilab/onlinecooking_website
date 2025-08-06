@@ -1,0 +1,266 @@
+ {% extends 'base.html' %}
+
+    {% block title %}Contact Us{% endblock %}
+
+    {% block content %}
+        <!-- Header for Academy Support - Moved outside the main container and centered -->
+        <header class="container mx-auto p-8 lg:p-12">
+            <div class="flex items-center justify-center mb-4">
+                <img src="{{ url_for('static', filename='images/44.jpg') }}" alt="Academy Support Icon" class="heading-icon">
+                <h2 class="text-4xl font-bold">ACADEMY SUPPORT</h2>
+            </div>
+        </header>
+
+        <!-- Main Content Container -->
+        <div class="container mx-auto p-8 lg:p-12">
+            <div class="p-8 lg:p-16 flex flex-col md:flex-row items-stretch gap-8 lg:gap-16">
+
+                <!-- Form Section -->
+                <div class="flex-1 p-6 md:p-8  ">
+                    <!-- Flash Messages Display Block (Jinja2) -->
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                    <div class="mb-4">
+                        {% for category, message in messages %}
+                        <div class="flash-message {{ category }}">{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    {% endwith %}
+                    <!-- End Flash Messages Display Block -->
+
+                    <form id="contactForm" action="{{ url_for('contact') }}" method="POST" class="space-y-6" novalidate enctype="multipart/form-data">
+                        <h3 class="text-xl font-bold mb-4">SUBMIT A TICKET</h3>
+
+                        <!-- Requester Field -->
+                        <div>
+                            <label for="requester" class="block text-sm font-semibold text-gray-700 mb-1">REQUESTER*</label>
+                            <input type="email" id="requester" name="requester" placeholder="EMAIL" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500" required>
+                            <span id="requester-error" class="error-message"></span>
+                        </div>
+
+                        <!-- Subject Field -->
+                        <div>
+                            <label for="subject" class="block text-sm font-semibold text-gray-700 mb-1">SUBJECT*</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500" required>
+                            <span id="subject-error" class="error-message"></span>
+                        </div>
+
+                        <!-- Description Field -->
+                        <div>
+                            <label for="description" class="block text-sm font-semibold text-gray-700 mb-1">DESCRIPTION*</label>
+                            <textarea id="description" name="description" rows="4" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500" required></textarea>
+                            <span id="description-error" class="error-message"></span>
+                        </div>
+
+                        <!-- Attach File -->
+                        <div class="flex items-center text-sm font-semibold text-gray-600">
+                            <svg class="w-4 h-4 mr-1 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                            </svg>
+                            <div class="custom-file-input-wrapper">
+                                <input type="file" id="attachment" name="attachment" class="custom-file-input" accept="image/*, application/pdf, .doc, .docx, .txt">
+                                <span class="hover:underline"  style="cursor: pointer;">ATTACH A FILE</span>
+                                <span id="file-name" class="file-name-display">No file chosen</span>
+                            </div>
+                            <span id="attachment-error" class="error-message"></span>
+                        </div>
+
+                        <!-- Captcha -->
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <input type="checkbox" id="captcha" name="captcha" class="form-checkbox h-5 w-5 text-red-600 rounded" required>
+                                <label for="captcha" class="text-sm">I'M NOT A ROBOT</label>
+                                <span id="captcha-error" class="error-message"></span>
+                                  <img src="{{ url_for('static', filename='images/45.jpg') }}" alt="reCAPTCHA logo" class="h-10">
+                            </div>
+                            <!-- Using the provided image for reCAPTCHA icon -->
+                          
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="flex space-x-4 pt-4">
+                            <button type="submit" class="w-1/2 bg-red-700 text-white font-semibold py-2 px-4 rounded-full shadow-md hover:bg-red-800 transition">SUBMIT</button>
+                            <button type="button" class="w-1/2  text-black bg-white font-semibold py-2 px-4 border border-gray-400 rounded-full  hover:bg-gray-100 transition">CANCEL</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Image Section -->
+                <div class="flex-1 hidden md:block">
+                    <img src="{{ url_for('static', filename='images/salmon.png') }}" alt="A professionally plated dish with eggs and avocado" class=" w-full h-full object-cover">
+                </div>
+
+            </div>
+        </div>
+
+    <!-- Call to Action Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-4">Homemakers to busy executives, budding chefs to food entrepreneurs, grandparents to moms, health conscious people or foodies - there's a course for all.</h2>
+            <a href="{{ url_for('courses') }}"><button class="bg-red-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-[#d57b67;] transition-colors duration-300 mt-8">VIEW COURSES</button></a>
+        </div>
+    </section>
+    {% endblock %}
+
+    {% block scripts %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            const requesterInput = document.getElementById('requester');
+            const subjectInput = document.getElementById('subject');
+            const descriptionTextarea = document.getElementById('description');
+            const captchaCheckbox = document.getElementById('captcha');
+            const attachmentInput = document.getElementById('attachment');
+            const fileNameDisplay = document.getElementById('file-name');
+
+            const requesterError = document.getElementById('requester-error');
+            const subjectError = document.getElementById('subject-error');
+            const descriptionError = document.getElementById('description-error');
+            const captchaError = document.getElementById('captcha-error');
+            const attachmentError = document.getElementById('attachment-error');
+            // Removed formMessages as Flask handles messages now
+            // const formMessages = document.getElementById('form-messages');
+
+            // Define allowed file types and max size (client-side for immediate feedback)
+            const ALLOWED_FILE_TYPES = {
+                'image/jpeg': true,
+                'image/png': true,
+                'image/gif': true,
+                'application/pdf': true,
+                'application/msword': true, // .doc
+                'application/vnd.openxmlformats-officedocument.wordprocessingml.document': true, // .docx
+                'text/plain': true
+            };
+            const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB in bytes
+
+            // Function to display a message (client-side validation errors only)
+            function displayClientSideError(element, message) {
+                element.textContent = message;
+            }
+
+            // Function to clear all client-side error messages
+            function clearClientSideErrors() {
+                requesterError.textContent = '';
+                subjectError.textContent = '';
+                descriptionError.textContent = '';
+                captchaError.textContent = '';
+                attachmentError.textContent = '';
+            }
+
+            // Client-side validation function (for immediate feedback before server roundtrip)
+            function validateClientSideForm() {
+                clearClientSideErrors();
+                let isValid = true;
+
+                // Validate Requester (Email)
+                if (requesterInput.value.trim() === '') {
+                    displayClientSideError(requesterError, 'Email is required.');
+                    isValid = false;
+                } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(requesterInput.value.trim())) {
+                    displayClientSideError(requesterError, 'Please enter a valid email address.');
+                    isValid = false;
+                }
+
+                // Validate Subject
+                if (subjectInput.value.trim() === '') {
+                    displayClientSideError(subjectError, 'Subject is required.');
+                    isValid = false;
+                }
+
+                // Validate Description
+                if (descriptionTextarea.value.trim() === '') {
+                    displayClientSideError(descriptionError, 'Description is required.');
+                    isValid = false;
+                }
+
+                // Validate Captcha
+                if (!captchaCheckbox.checked) {
+                    displayClientSideError(captchaError, 'Please confirm you are not a robot.');
+                    isValid = false;
+                }
+
+                // Validate Attachment (client-side)
+                if (attachmentInput.files.length > 0) {
+                    const file = attachmentInput.files[0];
+                    if (!ALLOWED_FILE_TYPES[file.type]) {
+                        displayClientSideError(attachmentError, 'Invalid file type. Allowed types: images, PDF, Word, TXT.');
+                        isValid = false;
+                    }
+                    if (file.size > MAX_FILE_SIZE) {
+                        displayClientSideError(attachmentError, `File size exceeds ${MAX_FILE_SIZE / (1024 * 1024)}MB.`);
+                        isValid = false;
+                    }
+                }
+
+                return isValid;
+            }
+
+            // Add submit event listener to the form for client-side validation
+            contactForm.addEventListener('submit', function(event) {
+                // Only prevent default if client-side validation fails.
+                // Server-side validation will still run after this.
+                if (!validateClientSideForm()) {
+                    event.preventDefault();
+                }
+                // If client-side validation passes, the form will submit normally to the server
+                // where Flask will perform its own validation and flash messages.
+            });
+
+            // Real-time validation feedback on input change/blur
+            requesterInput.addEventListener('input', function() {
+                if (requesterInput.value.trim() !== '' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(requesterInput.value.trim())) {
+                    requesterError.textContent = '';
+                }
+            });
+            requesterInput.addEventListener('blur', function() {
+                if (requesterInput.value.trim() === '') {
+                    requesterError.textContent = 'Email is required.';
+                } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(requesterInput.value.trim())) {
+                    requesterError.textContent = 'Please enter a valid email address.';
+                }
+            });
+
+            subjectInput.addEventListener('input', function() {
+                if (subjectInput.value.trim() !== '') {
+                    subjectError.textContent = '';
+                }
+            });
+            subjectInput.addEventListener('blur', function() {
+                if (subjectInput.value.trim() === '') {
+                    subjectError.textContent = 'Subject is required.';
+                }
+            });
+
+            descriptionTextarea.addEventListener('input', function() {
+                if (descriptionTextarea.value.trim() !== '') {
+                    descriptionError.textContent = '';
+                }
+            });
+            descriptionTextarea.addEventListener('blur', function() {
+                if (descriptionTextarea.value.trim() === '') {
+                    descriptionError.textContent = 'Description is required.';
+                }
+            });
+
+            captchaCheckbox.addEventListener('change', function() {
+                if (captchaCheckbox.checked) {
+                    captchaError.textContent = '';
+                }
+            });
+
+            // New: Display selected file name and validate on change
+            attachmentInput.addEventListener('change', function() {
+                if (this.files.length > 0) {
+                    fileNameDisplay.textContent = this.files[0].name;
+                    // Re-validate attachment immediately when file changes
+                    validateClientSideForm();
+                } else {
+                    fileNameDisplay.textContent = 'No file chosen';
+                    attachmentError.textContent = ''; // Clear error if file is removed
+                }
+            });
+        });
+    </script>
+    {% endblock %}
+

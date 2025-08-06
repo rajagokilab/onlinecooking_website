@@ -1,0 +1,297 @@
+{% extends 'base.html' %}
+
+{% block title %}Courses{% endblock %}
+
+{% block content %}
+
+ 
+    <!-- Featured Courses Section -->
+    <section class="py-16 ">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">FEATURED COURSES</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Course Card 1 -->
+                <div class="course-card-bg rounded-2xl overflow-hidden h-[550px] course-card transition-transform duration-300 hover:scale-105" style="background-image: url('uploaded:image_d5f20a.jpg-04c0051e-a89b-4c3d-b21d-e1d4b8949b7f');">
+                    <div class="featured-card-overlay flex flex-col justify-between">
+                        <div class="flex flex-col flex-grow justify-center p-4">
+                            <h3 class="text-2xl font-bold mb-4">THE GOOD GUT PROGRAM</h3>
+                            <p class="text-lg mb-4 leading-relaxed">In Just 4 Weeks, Say Goodbye To Bloating, Constipation, Inflammation & Acidity. Plus Gain More Energy & Boost Immunity</p>
+                            <div class="text-base mt-4">
+                                <span class="text-red-500 font-bold">Get 70% OFF</span><br>
+                                <span class="line-through text-gray-300">₹4999</span>
+                                <span class="text-white font-bold ml-2">₹1499</span>
+                            </div>
+                        </div>
+                       <a href="{{ url_for('courses') }}" ><button class="max-w-xs bg-red-800 text-white font-semibold py-3 px-8 rounded-full text-xl shadow-lg hover:bg-[#d57b67;] transition-colors duration-300">LEARN MORE</button></a> </div>
+                </div>
+                
+                <!-- Course Card 2 -->
+                <div class="course-card-bg rounded-2xl overflow-hidden h-[550px] course-card transition-transform duration-300 hover:scale-105" style="background-image: url('uploaded:image_d5f20a.jpg-04c0051e-a89b-4c3d-b21d-e1d4b8949b7f');">
+                    <div class="featured-card-overlay flex flex-col justify-between">
+                        <div class="flex flex-col flex-grow justify-center p-4">
+                            <h3 class="text-2xl font-bold mb-4">LOOK GOOD COURSE</h3>
+                            <p class="text-lg mb-4 leading-relaxed">In Just 30 Days, Discover Time Tested & Science Backed Insights, Remedies And Recipes</p>
+                            <div class="text-base mt-4">
+                                <span class="text-red-500 font-bold">New Launch Offer | Get 88% OFF</span><br>
+                                <span class="line-through text-gray-300">₹42995</span>
+                                <span class="text-white font-bold ml-2">₹4999</span>
+                            </div>
+                        </div>
+                        <button class="max-w-xs bg-red-800 text-white font-semibold py-3 px-8 rounded-full text-xl shadow-lg hover:bg-[#d57b67;] transition-colors duration-300">LEARN MORE</button>
+                    </div>
+                </div>
+
+                <!-- Course Card 3 -->
+                <div class="course-card-bg rounded-2xl overflow-hidden h-[550px] course-card transition-transform duration-300 hover:scale-105" style="background-image: url('uploaded:image_d5f20a.jpg-04c0051e-a89b-4c3d-b21d-e1d4b8949b7f');">
+                    <div class="featured-card-overlay flex flex-col justify-between">
+                        <div class="flex flex-col flex-grow justify-center p-4">
+                            <h3 class="text-2xl font-bold mb-4">Start Your Food Business From Home</h3>
+                            <p class="text-lg mb-4 leading-relaxed">Learn How To Start Your Food Business From Home, And Run A Successful Home Kitchen</p>
+                            <div class="text-base mt-4">
+                                <span class="text-red-500 font-bold">New Launch Offer | Get 70% OFF</span><br>
+                                <span class="line-through text-gray-300">₹4999</span>
+                                <span class="text-white font-bold ml-2">₹1499</span>
+                            </div>
+                        </div>
+                        <button class=" max-w-xs bg-red-800 text-white font-semibold py-3 px-8 rounded-full text-xl shadow-lg hover:bg-[#d57b67;] transition-colors duration-300">LEARN MORE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New All Courses Section -->
+<div class="container py-5">
+    <h2 class="text-4xl font-bold text-center mb-12">ALL COURSES</h2>
+    <div class="row g-4">
+
+        <!-- Course 1 -->
+        <div class="col-md-4">
+            <div class="course-card" style="background-image: url('/static/images/2.png');">
+                <div class="note-content">
+                    <h5>IMMUNITY BOOSTER RECIPES</h5>
+                    <p>Live Well And Boost Your Immunity With Tested Immunity Booster Recipes From The Expert In Indian Cuisine.</p>
+                    <p class="fw-bold">Limited Period Offer –<br>Get 40% OFF</p>
+                    <p class="fw-bold"><del>₹4000</del> ₹2,499</p>
+                </div>
+                <a href="{{ url_for('courses') }}" class="btn btn-danger learn-btn bg-red-800  text-white font-semibold py-3 px-8 rounded-full text-xl shadow-lg hover:bg-[#d57b67;] transition-colors duration-300">LEARN MORE</a>
+            </div>
+        </div>
+
+        <!-- Course 2 -->
+        <div class="col-md-4">
+            <div class="course-card" style="background-image: url('/static/images/2.png');">
+                <div class="note-content">
+                    <h5>GARNISHING & PLATING COURSE</h5>
+                    <p>Love Plating Your Dishes Like An Expert? Take Professional Cues From MasterChef To Excel In Food Presentation!</p>
+                    <p class="fw-bold">Limited Period Offer –<br>Get 60% OFF</p>
+                    <p class="fw-bold"><del>₹999</del> ₹399</p>
+                </div>
+                <a href="{{ url_for('courses') }}" class="btn btn-danger learn-btn bg-red-800  text-white font-semibold py-3 px-8 rounded-full text-xl shadow-lg hover:bg-[#d57b67;] transition-colors duration-300">LEARN MORE</a>
+            </div>
+        </div>
+
+        <!-- Course 3 -->
+        <div class="col-md-4">
+            <div class="course-card" style="background-image: url('/static/images/2.png');">
+                <div class="note-content">
+                    <h5>COOKING AT HOME: RESTAURANT STYLE</h5>
+                    <p>Cook Amazing Restaurant Style Dishes And Change Everyday Home Cooked Dishes Into Exceptional Dishes Your Family Will Love.</p>
+                    <p class="fw-bold">Get 90% OFF</p>
+                    <p class="fw-bold"><del>₹6000</del> ₹1,999</p>
+                </div>
+                <a href="{{ url_for('courses') }}" class="btn btn-danger learn-btn bg-red-800  text-white font-semibold py-3 px-8 rounded-full text-xl shadow-lg hover:bg-[#d57b67;] transition-colors duration-300">LEARN MORE</a>
+            </div>
+        </div>
+
+        <!-- Course 4 -->
+        <div class="col-md-4">
+            <div class="course-card" style="background-image: url('/static/images/2.png');">
+                <div class="note-content">
+                    <h5>VEGETARIAN'S DELIGHT</h5>
+                    <p>Cook The Tastiest Vegetarian Dishes Using Everyday Ingredients For Your Loved Ones At Home. A True Delight For A Vegetarian!</p>
+                    <p class="fw-bold">Get 37% OFF</p>
+                    <p class="fw-bold"><del>₹4000</del> ₹2,499</p>
+                </div>
+                <a href="{{ url_for('courses') }}" class="btn btn-danger learn-btn bg-red-800  text-white font-semibold py-3 px-8 rounded-full text-xl shadow-lg hover:bg-[#d57b67;] transition-colors duration-300">LEARN MORE</a>
+            </div>
+        </div>
+
+        <!-- Course 5 -->
+        <div class="col-md-4">
+            <div class="course-card" style="background-image: url('/static/images/2.png');">
+                <div class="note-content">
+                    <h5>BASIC COOKING FOR SINGLES</h5>
+                    <p>Impress Friends And Save Money By Making Amazing Food On Your Own Like MasterChef.</p>
+                    <p class="fw-bold">Limited Period Offer –<br>Get 67% OFF</p>
+                    <p class="fw-bold"><del>₹5999</del> ₹1,999</p>
+                </div>
+                <a href="{{ url_for('courses') }}" class="btn btn-danger learn-btn bg-red-800  text-white font-semibold py-3 px-8 rounded-full text-xl shadow-lg hover:bg-[#d57b67;] transition-colors duration-300">LEARN MORE</a>
+            </div>
+        </div>
+
+        <!-- Course 6 -->
+        <div class="col-md-4">
+            <div class="course-card" style="background-image: url('/static/images/2.png');">
+                <div class="note-content">
+                    <h5>INDIA'S FAVOURITES: RESTAURANT & HOME STYLE</h5>
+                    <p>Impress Friends And Save Money By Making Amazing Food On Your Own Like MasterChef.</p>
+                    <p class="fw-bold">Limited Period Offer –<br>Get 67% OFF</p>
+                    <p class="fw-bold"><del>₹6000</del> ₹1,999</p>
+                </div>
+                <a href="{{ url_for('courses') }}" class="btn btn-danger learn-btn bg-red-800  text-white font-semibold py-3 px-8 rounded-full text-xl shadow-lg hover:bg-[#d57b67;] transition-colors duration-300">LEARN MORE</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+ <main class="banner">
+        <section class="py-16">
+            <!-- Added px-4 for padding on left and right -->
+            <div class="px-4">
+                <div class="promo-card mx-auto" style="background-image: url('/static/images/banner.png');">
+                    <div class="promo-overlay"></div>
+
+                    <div class="promo-content">
+                        <h3 class="mt-3 md:text-2xl font mb-5" style="font-size: 40px;">LIMITED PERIOD OFFER:</h3>
+                        <h4 class=" md:text-4xl font-extrabold mb-4 border-b-2 border-white pb-2 inline-block"  style="font-size: 50px;">FREE GIFT WITH EVERY COURSE</h4>
+                        <p class="md: text-gray-300 mt-4 leading-relaxed"  style="font-size: 40px;">
+                            GET ACCESS TO BONUS COURSE WITH PREMIUM RECIPES AND COOK AMAZING DISHES WITH US CRANBERRIES.
+                        </p>
+                        <button id="learnMoreBtn" class="mt-8 bg-red-800 text-white font-semibold py-3 px-8 rounded-full text-xl shadow-lg hover:bg-[#d57b67;] transition-colors duration-300">
+                            LEARN MORE
+                        </button>
+                    </div>
+
+                    <div class="promo-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+   
+ <!-- FAQ Section -->
+   {% include 'faq_section.html' %}
+
+
+
+    <!-- Call to Action Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-4">Homemakers to busy executives, budding chefs to food entrepreneurs, grandparents to moms, health conscious people or foodies - there's a course for all.</h2>
+            <a href="{{ url_for('courses') }}"><button class="bg-red-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-[#d57b67;] transition-colors duration-300 mt-8">VIEW COURSES</button></a>
+        </div>
+    </section>
+{% endblock %}
+{% block scripts %}
+ <script>
+        // Basic JavaScript for the button
+        document.getElementById('learnMoreBtn').addEventListener('click', function() {
+            console.log('Learn More button clicked!');
+            const messageBox = document.createElement('div');
+            messageBox.className = 'fixed inset-0 bg-gray-400 bg-opacity-50 flex items-center justify-center z-50';
+            messageBox.innerHTML = `
+                <div class="bg-white p-6 rounded-lg shadow-xl text-center">
+                    <p class="text-lg font-semibold mb-4">You clicked "Learn More"! 🎉</p>
+                    <button id="closeMessageBox" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Close</button>
+                </div>
+            `;
+            document.body.appendChild(messageBox);
+
+            document.getElementById('closeMessageBox').addEventListener('click', function() {
+                document.body.removeChild(messageBox);
+            });
+        });
+    
+
+        // Script for All Courses card animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const courseCards = document.querySelectorAll('.course-card');
+
+            // Iterate over each card to add event listeners
+            courseCards.forEach(card => {
+                // Event for mouse click (desktop)
+                card.addEventListener('mousedown', () => {
+                    card.classList.add('active');
+                });
+                
+                card.addEventListener('mouseup', () => {
+                    card.classList.remove('active');
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.classList.remove('active');
+                });
+                
+                // Events for touch (mobile)
+                card.addEventListener('touchstart', () => {
+                    card.classList.add('active');
+                });
+                
+                card.addEventListener('touchend', () => {
+                    card.classList.remove('active');
+                });
+                
+                card.addEventListener('touchcancel', () => {
+                    card.classList.remove('active');
+                });
+            });
+        });
+
+        // course
+          // Get all the course cards
+    const courseCards = document.querySelectorAll('.course-card');
+
+    // Iterate over each card to add event listeners
+    courseCards.forEach(card => {
+        // Event for mouse click (desktop)
+        card.addEventListener('mousedown', () => {
+            card.classList.add('active');
+        });
+        
+        card.addEventListener('mouseup', () => {
+            card.classList.remove('active');
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.classList.remove('active');
+        });
+        
+        // Events for touch (mobile)
+        card.addEventListener('touchstart', () => {
+            card.classList.add('active');
+        });
+        
+        card.addEventListener('touchend', () => {
+            card.classList.remove('active');
+        });
+        
+        card.addEventListener('touchcancel', () => {
+            card.classList.remove('active');
+        });
+    });
+//  <!-- JavaScript for FAQ Accordion functionality -->
+   document.addEventListener('DOMContentLoaded', function() {
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const svgIcon = this.querySelector('svg');
+
+                    // Toggle the 'active' class on content
+                    content.classList.toggle('active');
+                    // Toggle the 'rotate' class on SVG
+                    svgIcon.classList.toggle('rotate');
+
+                    // Set max-height dynamically based on content scrollHeight
+                    if (content.classList.contains('active')) {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                    } else {
+                        content.style.maxHeight = '0';
+                    }
+                });
+            });
+        });
+
+    </script>
+    {% endblock %}

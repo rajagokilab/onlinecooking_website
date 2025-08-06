@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive FAQ Section</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #fdfaf6; /* Light background for the page */
+        }
+
+        /* Centering the main section */
+        .faq-container-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Accordion item styling */
+        .accordion-item {
+            margin-bottom: 1rem; /* Space between rows */
+            border: 1px solid #d4a762; /* Brown shade border */
+            background-color: #ffffff; /* White background for items */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Softer shadow */
+            border-radius: 0.75rem; /* rounded-xl from Tailwind */
+            padding: 1rem; /* p-4 from Tailwind */
+        }
+
+        /* Accordion content styling */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            padding-top: 0;
+            padding-bottom: 0;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        }
+
+        .accordion-content.active {
+            max-height: 800px; /* Increased max-height for larger dropdown */
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        /* SVG icon rotation */
+        .accordion-header svg {
+            transition: transform 0.3s ease-out;
+        }
+
+        .accordion-header svg.rotate {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- FAQ Section -->
+    <section class="faq-container-wrapper">
+        <section class="py-16 w-full">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12 text-amber-900">FAQ'S</h2>
+                <div class="max-w-5xl mx-auto space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header flex justify-between items-center cursor-pointer py-2">
+                            <span class="font-semibold text-lg md:text-xl text-amber-900">1. How do I find a recipe on your website?</span>
+                            <svg class="h-8 w-8 transform text-amber-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="accordion-content text-amber-800 text-base md:text-lg">
+                            <ul class="list-disc list-inside">
+                                <li>You can easily find a recipe by using the search bar at the top of the page. Simply type in the dish you're looking for, and we'll provide a list of relevant recipes.</li>
+                                <li>Alternatively, you can browse recipes by category (e.g., Quick Meals, Desserts, Vegan, etc.)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 2 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header flex justify-between items-center cursor-pointer py-2">
+                            <span class="font-semibold text-lg md:text-xl text-amber-900">2. Can I save my favorite recipes?</span>
+                            <svg class="h-8 w-8 transform text-amber-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="accordion-content text-amber-800 text-base md:text-lg">
+                            <p>Yes, you can create a user account and save your favorite recipes to your profile for easy access later.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 3 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header flex justify-between items-center cursor-pointer py-2">
+                            <span class="font-semibold text-lg md:text-xl text-amber-900">3. How do I submit my own recipes?</span>
+                            <svg class="h-8 w-8 transform text-amber-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="accordion-content text-amber-800 text-base md:text-lg">
+                            <p>We are always looking for new recipes! Please contact us through our contact page to learn more about submitting your recipes.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 4 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header flex justify-between items-center cursor-pointer py-2">
+                            <span class="font-semibold text-lg md:text-xl text-amber-900">4. Are the recipes suitable for beginners?</span>
+                            <svg class="h-8 w-8 transform text-amber-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="accordion-content text-amber-800 text-base md:text-lg">
+                            <p>Many of our courses are designed specifically for beginners, with step-by-step instructions and video tutorials to help you master new skills.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 5 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header flex justify-between items-center cursor-pointer py-2">
+                            <span class="font-semibold text-lg md:text-xl text-amber-900">5. How do I know if a recipe is vegan, gluten-free, or dairy-free?</span>
+                            <svg class="h-8 w-8 transform text-amber-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="accordion-content text-amber-800 text-base md:text-lg">
+                            <p>Each recipe page includes detailed information on dietary requirements and allergens. You can also use our search filters to find recipes that meet your specific needs.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 6 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header flex justify-between items-center cursor-pointer py-2">
+                            <span class="font-semibold text-lg md:text-xl text-amber-900">6. Can I print recipes from the website?</span>
+                            <svg class="h-8 w-8 transform text-amber-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="accordion-content text-amber-800 text-base md:text-lg">
+                            <p>Yes, all our recipes are print-friendly. Look for the print button on each recipe page.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 7 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header flex justify-between items-center cursor-pointer py-2">
+                            <span class="font-semibold text-lg md:text-xl text-amber-900">7. Do you offer video tutorials?</span>
+                            <svg class="h-8 w-8 transform text-amber-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="accordion-content text-amber-800 text-base md:text-lg">
+                            <p>Many of our courses include video tutorials, which provide a visual guide to the cooking process.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 8 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header flex justify-between items-center cursor-pointer py-2">
+                            <span class="font-semibold text-lg md:text-xl text-amber-900">8. Can I share recipes with my friends and family?</span>
+                            <svg class="h-8 w-8 transform text-amber-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="accordion-content text-amber-800 text-base md:text-lg">
+                            <p>Yes, you can easily share recipes with your friends and family using the social media sharing buttons on each recipe page.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 9 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header flex justify-between items-center cursor-pointer py-2">
+                            <span class="font-semibold text-lg md:text-xl text-amber-900">9. How can I contact you if I have questions or suggestions?</span>
+                            <svg class="h-8 w-8 transform text-amber-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="accordion-content text-amber-800 text-base md:text-lg">
+                            <p>Please use the contact form on our website to get in touch with our team. We're happy to help!</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 10 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header flex justify-between items-center cursor-pointer py-2">
+                            <span class="font-semibold text-lg md:text-xl text-amber-900">10. Is there a mobile app for this website?</span>
+                            <svg class="h-8 w-8 transform text-amber-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="accordion-content text-amber-800 text-base md:text-lg">
+                            <p>We are currently working on a mobile app to enhance your learning experience. Stay tuned for updates!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- JavaScript for FAQ Accordion functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling; // Get the next sibling, which is the accordion-content
+                    const svgIcon = this.querySelector('svg'); // Get the SVG icon within the header
+
+                    // Toggle the 'active' class on the content to show/hide it
+                    content.classList.toggle('active');
+
+                    // Toggle the 'rotate' class on the SVG icon to rotate it
+                    svgIcon.classList.toggle('rotate');
+                });
+            });
+            
+        });
+        
+    </script>
+
+</body>
+</html>

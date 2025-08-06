@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Navbar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fefcf5;
+    }
+
+    /* Enable hover dropdowns only on desktop (>=1024px) */
+    @media (min-width: 1024px) {
+      .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="py-2 px-6 bg-orange-100 shadow-md">
+    <div class="container mx-auto flex items-center justify-between flex-wrap lg:flex-nowrap">
+      
+      <!-- Logo -->
+      <div class="flex items-center flex-shrink-0">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="w-[250px] h-auto">
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button id="menu-button" class="lg:hidden text-gray-800 ml-auto focus:outline-none">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <!-- Nav Links -->
+      <div id="nav-links"
+           class="w-full lg:w-auto hidden lg:flex flex-col lg:flex-row lg:items-center lg:space-x-6 text-2xl font-medium mt-4 lg:mt-0 lg:ml-auto">
+
+        <a href="{{ url_for('home') }}" class="px-4 py-2 text-gray-600 hover:text-green-600 transition">HOME</a>
+        <a href="{{ url_for('about') }}" class="px-4 py-2 text-gray-700 hover:text-green-600 transition">ABOUT</a>
+
+        <!-- Programs Dropdown -->
+        <div class="relative dropdown w-full lg:w-auto">
+          <button class="flex items-center w-full px-4 py-2 text-gray-700 hover:text-green-600 transition lg:w-auto">
+            PROGRAMS
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="dropdown-menu absolute hidden lg:absolute bg-white shadow-lg rounded-md mt-1 lg:mt-2 w-full lg:w-64 z-20">
+            <a href="{{ url_for('bakery') }}" class="block px-4 py-2 hover:bg-gray-100 text-sm">BAKERY BUSINESS ACCELERATOR PROGRAM</a>
+            <a href="{{ url_for('cloud') }}" class="block px-4 py-2 hover:bg-gray-100 text-sm">CLOUD KITCHEN ACCELERATOR PROGRAM</a>
+          </div>
+        </div>
+
+        <!-- Courses Dropdown -->
+        <div class="relative dropdown w-full lg:w-auto">
+          <button class="flex items-center w-full px-4 py-2 text-gray-700 hover:text-green-600 transition lg:w-auto">
+            COURSES
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="dropdown-menu absolute hidden lg:absolute bg-white shadow-lg rounded-md mt-1 lg:mt-2 w-full lg:w-48 z-20">
+            <a href="{{ url_for('courses') }}" class="block px-4 py-2 hover:bg-gray-100 text-sm">ALL COURSES</a>
+          </div>
+        </div>
+
+        <a href="{{ url_for('contact') }}" class="px-4 py-2 text-gray-700 hover:text-green-600 transition">CONTACT</a>
+
+        <a href="{{ url_for('login') }}" class="mt-2 lg:mt-0">
+          <button class="px-6 py-2 bg-red-700 text-white rounded-full font-semibold shadow-md hover:bg-red-800 transition">
+            LOGIN
+          </button>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- JS for mobile toggle and dropdown -->
+<script>
+  const menuButton = document.getElementById('menu-button');
+  const navLinks = document.getElementById('nav-links');
+  const dropdowns = document.querySelectorAll('.dropdown');
+
+  // Toggle main nav menu on mobile
+  menuButton.addEventListener('click', () => {
+    navLinks.classList.toggle('hidden');
+  });
+
+  // Toggle dropdowns on mobile
+  dropdowns.forEach(drop => {
+    const btn = drop.querySelector('button');
+    const menu = drop.querySelector('.dropdown-menu');
+
+    btn.addEventListener('click', (e) => {
+      if (window.innerWidth < 1024) {
+        e.preventDefault();
+        menu.classList.toggle('hidden');
+      }
+    });
+  });
+</script>
+</body>
+</html>

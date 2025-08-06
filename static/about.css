@@ -1,0 +1,66 @@
+  body {
+            font-family: 'poppins', sans-serif;
+            background-color: #fefcf5;
+        }
+        .story{
+
+        display: flex;
+            flex-direction: column; /* Arrange items vertically */
+            /* justify-content: center;  */
+            align-items: center; 
+            /* min-height: 100vh;  */
+            min-width:90%;
+            padding: 1rem; /* Add some padding around the main container */
+        }
+
+        /* Custom style for the background image */
+        .story-background {
+            background-image: url('/static/images/16.png'); /* Your provided image */
+            background-size: cover; /* Cover the entire container */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            position: relative; /* Needed for overlay */
+        }
+
+        /* Overlay for better text readability */
+        .story-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* background: rgba(0, 0, 0, 0.5); Semi-transparent black overlay */
+            border-radius: 2rem; /* Match parent border-radius */
+        }
+        .noodle {
+           
+            display: flex;
+            flex-direction: column; /* Arrange items vertically */
+            /* justify-content: center;  */
+            align-items: center; /* Center horizontally */
+            min-height: 100vh;
+            height: 100%;
+            padding: 1rem; /* Add some padding around the main container */
+        }
+
+        /* Custom style for the background image */
+        .values-background {
+            background-image: url('/static/images/9.png'); /* Your provided 'Our Values' image */
+            background-size: cover; /* Cover the entire container */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            position: relative; /* Needed for overlay */
+        }
+
+        /* Overlay for better text readability */
+        .values-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* background: rgba(0, 0, 0, 0.6); Semi-transparent black overlay for better contrast */
+            border-radius: 2rem; /* Match parent border-radius */
+        }

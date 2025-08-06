@@ -1,0 +1,18 @@
+/* General responsiveness for enrolldetails.html */
+@media (max-width: 768px) {
+  .enrollment-form h2 {
+    font-size: 2rem;
+  }
+  .enrollment-form form {
+    padding: 1rem;
+  }
+  .enrollment-form label {
+    font-size: 1rem;
+  }
+  .enrollment-form input, .enrollment-form select {
+    font-size: 1rem;
+  }
+  .enrollment-form .btn {
+    font-size: 1rem;
+  }
+}

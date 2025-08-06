@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+
+{% block title %}Enrollment Confirmation{% endblock %}
+
+{% block content %}
+<div class="flex items-center justify-center min-h-screen p-4">
+    <div class="w-full max-w-2xl bg-[#ffeeca] rounded-3xl shadow-lg p-8">
+        
+        <!-- Header Section -->
+        <div class="text-center mb-8">
+            <div class="inline-block bg-lime-600 text-white font-bold py-2 px-6 rounded-full shadow-md">
+                ENROLL
+            </div>
+            <h1 class="text-xl md:text-2xl font-bold mt-4">
+                BAKERY BUSINESS ACCELERATOR PROGRAM
+            </h1>
+        </div>
+
+        <!-- Flash Message Display -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="mb-4">
+                {% for category, message in messages %}
+                    <div class="p-3 rounded-lg text-sm font-medium
+                    {% if category == 'success' %} bg-green-100 text-green-700
+                    {% elif category == 'error' %} bg-red-100 text-red-700
+                    {% else %} bg-gray-100 text-gray-700
+                    {% endif %}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <!-- Enrollment Form -->
+        <form id="enrollment-form" action="{{ url_for('submit_enrollment') }}" method="POST">
+            <div class="space-y-6">
+                
+                <!-- Name -->
+                <div>
+                    <label for="name" class="block font-semibold mb-1">NAME</label>
+                    <input type="text" id="name" name="name"
+                        pattern="^[A-Za-z\s]{2,50}$"
+                        title="Enter a valid name (only letters and spaces, 2–50 characters)"
+                        required
+                        class="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                </div>
+
+                <!-- Email or Login -->
+                <div class="flex flex-col md:flex-row md:items-center gap-4">
+                    <div class="flex-1">
+                        <label for="email" class="block font-semibold mb-1">E MAIL</label>
+                        <input type="email" id="email" name="email"
+                            title="Enter a valid email address"
+                            required
+                            class="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    </div>
+                    <div class="text-center font-bold">OR</div>
+                    <div class="flex-1">
+                        <a href="{{ url_for('login') }}" class="inline-block font-semibold text-blue-600 underline">ALREADY HAVE AN ACCOUNT</a>
+                    </div>
+                </div>
+
+                <!-- Mobile -->
+                <div>
+                    <label for="mobile" class="block font-semibold mb-1">MOBILE NUMBER</label>
+                    <input type="tel" id="mobile" name="mobile"
+                        pattern="^[6-9]\d{9}$"
+                        title="Enter a valid 10-digit Indian mobile number"
+                        required
+                        class="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                </div>
+
+                <!-- GST -->
+                <div class="flex items-center space-x-2">
+                    <input type="checkbox" id="gst" name="gst" class="w-5 h-5 text-blue-600 rounded border-gray-300 focus:ring-blue-500">
+                    <label for="gst" class="font-medium text-sm">USE GSTIN For Claiming Input Tax (India)</label>
+                </div>
+
+                <!-- Price Summary -->
+                <div class="space-y-4 pt-4">
+                    <div class="flex justify-between items-center text-sm">
+                        <span class="font-semibold">SUB TOTAL:</span>
+                        <span class="font-bold text-lg">INR 36000</span>
+                    </div>
+                    <div class="flex justify-between items-center text-sm">
+                        <span class="font-semibold">DISCOUNT:</span>
+                        <span class="font-bold text-lg">INR 0.00</span>
+                    </div>
+                    <div class="flex justify-between items-center border-t-2 border-gray-200 pt-4">
+                        <span class="font-semibold">TOTAL PAYABLE:</span>
+                        <span class="font-bold text-2xl text-blue-600">INR 36000.00</span>
+                    </div>
+                    <div class="text-xs text-gray-500 text-right">(INCL 18% GST)</div>
+                </div>
+
+                <!-- Coupon Code -->
+                <div class="flex items-center gap-4 pt-4">
+                    <div class="flex-1">
+                        <input type="text" placeholder="COUPON CODE" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <button type="button" class="bg-gray-200 text-gray-700 font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-gray-300 transition duration-200">
+                        APPLY COUPON
+                    </button>
+                </div>
+
+                <!-- Payment Options -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+                    <div class="p-4 border-2 border-gray-300 rounded-lg">
+                        <div class="font-semibold mb-2">UPI USE PAYMENT</div>
+                        <input type="text" placeholder="+ UPI ID" class="w-full p-2 border border-gray-300 rounded-lg">
+                    </div>
+                    <div class="p-4 border-2 border-gray-300 rounded-lg">
+                        <div class="font-semibold mb-2">CREDIT/DEBIT CARD USE PAY</div>
+                        <input type="text" placeholder="+ CARD NUMBER" class="w-full p-2 border border-gray-300 rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="text-center mt-8">
+                    <button id="submit-button" type="submit"
+                        class="w-full bg-blue-600 text-white font-bold py-3 px-12 rounded-full shadow-lg hover:bg-blue-700 transition duration-300">
+                        SUBMIT & PAY NOW
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- JS Validation -->
+<script>
+    document.getElementById("enrollment-form").addEventListener("submit", function (e) {
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const mobile = document.getElementById("mobile").value.trim();
+
+        const nameRegex = /^[A-Za-z\s]{2,50}$/;
+        const mobileRegex = /^[6-9]\d{9}$/;
+
+        if (!nameRegex.test(name)) {
+            alert("Please enter a valid name (letters only, 2–50 characters).");
+            e.preventDefault();
+            return;
+        }
+
+        if (!mobileRegex.test(mobile)) {
+            alert("Please enter a valid 10-digit Indian mobile number.");
+            e.preventDefault();
+            return;
+        }
+    });
+</script>
+{% endblock %}

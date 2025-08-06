@@ -1,0 +1,236 @@
+{% extends 'base.html' %}
+
+{% block title %}Cook India's Favourite Dishes{% endblock %}
+
+{% block content %}
+
+    <!-- Hero Section -->
+    <div class="container mx-auto p-4 lg:p-8">
+        <div class="bg-gray-100 rounded-3xl p-6 lg:p-12 text-center shadow-lg relative overflow-hidden">
+            <!-- Background Image -->
+            <img src="https://placehold.co/1200x800/E8DBC6/333?text=Cooking+Background" alt="Cooking background with various dishes" class="absolute inset-0 w-full h-full object-cover rounded-3xl opacity-30">
+            
+            <div class="relative z-10 space-y-6">
+                <h1 class="text-xl md:text-3xl font-extrabold max-w-2xl mx-auto">
+                    From Butter Chicken to Singaporean Noodles: Cook India's Favourite Dishes at Home
+                </h1>
+                <p class="text-sm md:text-base font-medium max-w-4xl mx-auto">
+                    In just 90 days, master the art of cooking 140+ basic to advanced Restaurant and Home styled dishes with step by step guidance and recipes!
+                </p>
+                
+                <!-- Offer and Enroll Button -->
+                <div class="mt-8 space-y-4">
+                    <p class="text-lg md:text-xl font-semibold">
+                        Limited Period Offer - Get 67% OFF
+                    </p>
+                    <p class="text-xl md:text-3xl font-bold">
+                        <span class="line-through text-red-600">₹ 6000</span> <span class="text-red-700">₹ 1,999</span>
+                    </p>
+                   <a href="{{ url_for('enrollment_success') }}"><button class="px-8 py-3 bg-red-700 text-white rounded-full font-semibold shadow-md hover:bg-red-800 transition duration-300">
+                        ENROLL NOW
+                    </button></a> 
+                </div>
+                
+                <!-- Description below offer -->
+                <p class="text-sm md:text-base mt-6 max-w-2xl mx-auto">
+                    Learn the secrets of cooking delicious restaurant and home-style dishes with the Masterchef & ace the art of recreating amazing cuisines at home.
+                </p>
+                
+                <!-- Profile Section -->
+                <div class="flex flex-wrap items-center justify-center gap-6 mt-8">
+                    <div class="flex items-center space-x-2">
+                        <img src="https://placehold.co/40x40/fff/333?text=20M" alt="20M followers icon" class="w-10 h-10 rounded-full">
+                        <span class="text-sm">20M <br> Followers</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <img src="https://placehold.co/40x40/fff/333?text=60+" alt="Author icon" class="w-10 h-10 rounded-full">
+                        <span class="text-sm">Author <br> 60+ books</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <img src="https://placehold.co/40x40/fff/333?text=30+" alt="Experience icon" class="w-10 h-10 rounded-full">
+                        <span class="text-sm">30 Yrs+ <br> Culinary Expertise</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Course Curriculum Section -->
+    <div class="container mx-auto p-4 lg:p-8 mt-12">
+        <h2 class="text-2xl md:text-3xl font-extrabold text-center text-gray-700 mb-8">Course Curriculum</h2>
+        <div class="flex flex-col md:flex-row items-stretch gap-8">
+            <!-- Image Column -->
+            <div class="flex-1">
+                <img src="https://placehold.co/600x600/E8DBC6/333?text=Curriculum+Image" alt="Plated dish with potatoes" class="rounded-3xl w-full h-auto object-cover shadow-lg">
+            </div>
+            
+            <!-- Curriculum List -->
+            <div class="flex-1 bg-gray-100 rounded-3xl p-6 lg:p-12 shadow-lg">
+                <ul class="list-none space-y-3 text-lg">
+                    <li><span class="font-bold">.</span> Introduction: Restaurant style dishes</li>
+                    <li><span class="font-bold">.</span> Master class with master chef</li>
+                    <li><span class="font-bold">.</span> Restaurant style dishes: Accompaniments</li>
+                    <li><span class="font-bold">.</span> Breads</li>
+                    <li><span class="font-bold">.</span> Desserts</li>
+                    <li><span class="font-bold">.</span> Main course-non veg</li>
+                    <li><span class="font-bold">.</span> Main course - veg</li>
+                    <li><span class="font-bold">.</span> Rice</li>
+                    <li><span class="font-bold">.</span> Soup -veg</li>
+                    <li><span class="font-bold">.</span> Starters non - veg</li>
+                    <li><span class="font-bold">.</span> Soup non - veg</li>
+                    <li><span class="font-bold">.</span> Starters veg</li>
+                    <li><span class="font-bold">.</span> Bonus course: All about US Assessments</li>
+                    <li><span class="font-bold">.</span> Thank you</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Class Sample Video & Testimonials Section -->
+    <div class="container mx-auto p-4 lg:p-8 mt-12">
+        <h2 class="text-2xl md:text-3xl font-extrabold text-center text-gray-700 mb-8">COURSE TESTIMONIALS</h2>
+        
+        <!-- Sample Video & Testimonial Container -->
+        <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+            <!-- Sample Video -->
+            <div class="flex-1 flex justify-center">
+                <div class="w-full max-w-md h-auto aspect-video bg-gray-300 rounded-3xl flex items-center justify-center relative shadow-lg">
+                    <svg class="w-16 h-16 text-white absolute opacity-70" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <!-- Testimonial with Animation -->
+            <div class="flex-1 flex flex-col items-center text-center">
+                <div id="testimonial-container" class="transition-opacity duration-500 ease-in-out">
+                    <img id="testimonial-image" src="https://placehold.co/100x100/E8DBC6/333?text=Maya" alt="A testimonial photo" class="mx-auto rounded-full w-24 h-24 object-cover shadow-md mb-4">
+                    <p id="testimonial-text" class="text-xl md:text-2xl font-bold text-gray-700 max-w-md">
+                        "LEFT WITH NEW SKILLS AND A FULL BELLY. HIGHLY RECOMMEND!"
+                    </p>
+                    <p id="testimonial-author" class="mt-4 text-sm font-semibold text-gray-500">
+                        -MAYA S.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Key Features Section -->
+    <div class="container mx-auto p-4 lg:p-8 mt-12">
+        <div class="bg-lime-600 text-white rounded-3xl p-6 lg:p-12 shadow-lg">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="flex items-start">
+                    <svg class="w-8 h-8 mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/><path fill-rule="evenodd" d="M4 5a2 2 0 012-2H4a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm4 0h12a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V5z" clip-rule="evenodd"/></svg>
+                    <div>
+                        <p class="font-bold mb-1">1 YEAR ACCESS TO EXCLUSIVE RECIPE VEDIOS, NOT AVAILABLE ON YOUTUBE</p>
+                    </div>
+                </div>
+                <!-- Feature 2 -->
+                <div class="flex items-start">
+                    <svg class="w-8 h-8 mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM8 11a1 1 0 00-1 1v1a1 1 0 102 0v-1a1 1 0 00-1-1zm3 0a1 1 0 00-1 1v1a1 1 0 102 0v-1a1 1 0 00-1-1z"/></svg>
+                    <div>
+                        <p class="font-bold mb-1">MORE THAN 140 DOWNLOADABLE SIGNATURE RECIPES FROM THE MASTERCHEF</p>
+                    </div>
+                </div>
+                <!-- Feature 3 -->
+                <div class="flex items-start">
+                    <svg class="w-8 h-8 mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M18 13v-1a4 4 0 00-4-4H6a4 4 0 00-4 4v1a2 2 0 002 2h12a2 2 0 002-2z"/></svg>
+                    <div>
+                        <p class="font-bold mb-1">LEARN HOW TO COOK DISHES FROM BASIC TO ADVANCED RECIPES</p>
+                    </div>
+                </div>
+                <!-- Feature 4 -->
+                <div class="flex items-start">
+                    <svg class="w-8 h-8 mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M12 2a1 1 0 00-1 1v4a1 1 0 002 0V3a1 1 0 00-1-1zM4 9a1 1 0 00-1 1v4a1 1 0 002 0V9a1 1 0 00-1-1zM18 9a1 1 0 00-1 1v4a1 1 0 002 0V9a1 1 0 00-1-1z"/></svg>
+                    <div>
+                        <p class="font-bold mb-1">WATCH VEDIO UNLIMITED TIMES AND DOWNLOAD RECIPES PDFS</p>
+                    </div>
+                </div>
+                <!-- Feature 5 -->
+                <div class="flex items-start">
+                    <svg class="w-8 h-8 mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM8 9a1 1 0 112 0v1a1 1 0 11-2 0V9z"/></svg>
+                    <div>
+                        <p class="font-bold mb-1">LEARN FROM ANYWHERE WITH ANY DEVICE-MOBILE, DESKTOP, OR LAPTOP</p>
+                    </div>
+                </div>
+                <!-- Feature 6 -->
+                <div class="flex items-start">
+                    <svg class="w-8 h-8 mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM8 11a1 1 0 00-1 1v1a1 1 0 102 0v-1a1 1 0 00-1-1zm3 0a1 1 0 00-1 1v1a1 1 0 102 0v-1a1 1 0 00-1-1z"/></svg>
+                    <div>
+                        <p class="font-bold mb-1">COURSE COMPLETION CERTIFICATE</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer-like Section -->
+    <div class="text-center mt-12 mb-8 px-4">
+        <p class="text-xl lg:text-3xl font-extrabold max-w-5xl mx-auto mb-8">
+            Homemakers to busy executives, budding chefs to food entrepreneurs, grandparents to moms, health conscious people or foodies – there's a course for all.
+        </p>
+        <button class="bg-red-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-red-800 transition duration-300 ease-in-out">
+            VIEW COURSES
+        </button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const testimonials = [
+                {
+                    quote: "LEFT WITH NEW SKILLS AND A FULL BELLY. HIGHLY RECOMMEND!",
+                    author: "-MAYA S.",
+                    image: "https://placehold.co/100x100/E8DBC6/333?text=Maya"
+                },
+                {
+                    quote: "CHEF MADE IT FUN, EVEN FOR A TOTAL BEGINNER LIKE ME!",
+                    author: "-CARLOS D",
+                    image: "https://placehold.co/100x100/E8DBC6/333?text=Carlos"
+                },
+                {
+                    quote: "FUN, HANDS-ON, AND DELICIOUS—WHAT MORE COULD YOU WANT?",
+                    author: "-EMILY T.",
+                    image: "https://placehold.co/100x100/E8DBC6/333?text=Parrot"
+                },
+                {
+                    quote: "I FINALLY LEARNED HOW TO COOK WITHOUT GOOGLING EVERY STEP!",
+                    author: "-JASON M.",
+                    image: "https://placehold.co/100x100/E8DBC6/333?text=Team"
+                }
+            ];
+
+            let currentTestimonialIndex = 0;
+            const testimonialContainer = document.getElementById('testimonial-container');
+            const testimonialImage = document.getElementById('testimonial-image');
+            const testimonialText = document.getElementById('testimonial-text');
+            const testimonialAuthor = document.getElementById('testimonial-author');
+
+            function updateTestimonial() {
+                // Fade out current testimonial
+                testimonialContainer.classList.remove('testimonial-fade-in');
+                testimonialContainer.style.opacity = 0;
+
+                setTimeout(() => {
+                    // Update content after fade out
+                    currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
+                    const nextTestimonial = testimonials[currentTestimonialIndex];
+
+                    testimonialImage.src = nextTestimonial.image;
+                    testimonialText.textContent = `"${nextTestimonial.quote}"`;
+                    testimonialAuthor.textContent = nextTestimonial.author;
+
+                    // Fade in new testimonial
+                    testimonialContainer.classList.add('testimonial-fade-in');
+                    testimonialContainer.style.opacity = 1;
+                }, 500); // Wait for fade out animation to finish
+            }
+
+            // Start the testimonial rotation after a delay
+            setInterval(updateTestimonial, 5000); // Change testimonial every 5 seconds
+        });
+    </script>
+{% endblock %}
+
+

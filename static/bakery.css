@@ -1,0 +1,62 @@
+/* General responsiveness for cloud.html */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem;
+  }
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+  .hero-section p {
+    font-size: 1rem;
+  }
+  .course-details h2 {
+    font-size: 2rem;
+  }
+  .course-details p {
+    font-size: 1rem;
+  }
+  .course-features ul {
+    font-size: 1rem;
+  }
+}
+.body {
+    font-family: 'poppins', sans-serif;
+    background-color: #fefcf5;
+}
+.chef-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 6px solid #a3dc3f;
+      overflow: hidden;
+      position: absolute;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: white;
+    }
+    .chef-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .badges {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .badge {
+      background: white;
+      padding: 0.75rem 1.25rem;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .badge img {
+      width: 20px;
+      height: 20px;
+      margin-right: 0.5rem;
+    }

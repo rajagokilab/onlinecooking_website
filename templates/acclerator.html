@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Badges</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+        }
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem; /* Equivalent to Tailwind's gap-6 */
+            margin-top: 1.5rem; /* Equivalent to Tailwind's mt-6 */
+            flex-wrap: wrap;
+            padding: 1rem; /* Added padding for smaller screens */
+        }
+        .badge {
+            background: white;
+            padding: 0.75rem 1.25rem; /* Equivalent to Tailwind's py-3 px-5 */
+            border-radius: 9999px; /* Equivalent to Tailwind's rounded-full */
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Custom shadow */
+        }
+        .badge img {
+            width: 20px;
+            height: 20px;
+            margin-right: 0.5rem; /* Equivalent to Tailwind's mr-2 */
+        }
+    </style>
+</head>
+<body>
+
+<div class="badges">
+    <div class="badge">
+        <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="Followers Icon">
+        <span>20M Followers</span>
+    </div>
+    <div class="badge">
+        <img src="https://cdn-icons-png.flaticon.com/512/29/29302.png" alt="Books Icon">
+        <span>Author 50+ books</span>
+    </div>
+    <div class="badge">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Chef Hat Icon">
+        <span>30 Yrs+ Culinary Expertise</span>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Footer</title>
+    <!-- Load Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fefcf5;
+        }
+        /* A simple hover effect for social icons */
+        .social-icon:hover {
+            transform: scale(1.1);
+            transition: transform 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <footer class="bg-[#d57b67] text-white p-8 md:p-12 rounded-t-xl mt-4 shadow-md">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            
+            <!-- Logo and Description Section -->
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+      <div class="flex items-center justify-center">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="w-[200px] h-auto">
+      </div>
+            </div>
+
+            <!-- Navigation Links Section -->
+            <div class="text-center md:text-left">
+                <h3 class="text-xl font-bold mb-4 uppercase">Home</h3>
+                <ul class="space-y-2">
+                    <li><a href="{{ url_for('about') }}" class="hover:text-gray-200 transition-colors duration-200">About Us</a></li>
+                    <li><a href="{{ url_for('programs') }}" class="hover:text-gray-200 transition-colors duration-200">Programs</a></li>
+                    <li><a href="{{ url_for('courses') }}" class="hover:text-gray-200 transition-colors duration-200">Courses</a></li>
+                </ul>
+            </div>
+
+            <!-- Courses Section -->
+            <div class=" md:text-left">
+                <h3 class="text-xl font-bold mb-4 uppercase">Courses</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-gray-200 transition-colors duration-200">THE GOOD GUT PROGRAM</a></li>
+                    <li><a href="#" class="hover:text-gray-200 transition-colors duration-200">FOOD LOOK GOOD</a></li>
+                    <li><a href="#" class="hover:text-gray-200 transition-colors duration-200">STRAT YOUR BUSINESS FROM HOME-NON VEG & VEG</a></li>
+                    <li><a href="#" class="hover:text-gray-200 transition-colors duration-200">STRAT YOUR FOOD BUSINESS FROM HOME-VEG ONLY</a></li>
+                    <li><a href="#" class="hover:text-gray-200 transition-colors duration-200">IMMUNITY BOOSTER RECIPES</a></li>
+                    <li><a href="#" class="hover:text-gray-200 transition-colors duration-200">INDIA'S FAVOURITES: RESTAURANTS AND HOME STYLE DISHES</a></li>
+                    <li><a href="#" class="hover:text-gray-200 transition-colors duration-200">VEGETARIAN'S DELIGHT</a></li>
+                    <li><a href="#" class="hover:text-gray-200 transition-colors duration-200">GARNISHING & PLATING</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact and Social Media Section -->
+            <div class=" md:text-left">
+                <h3 class="text-xl font-bold mb-4 uppercase">Contact</h3>
+                <ul class="space-y-4 mb-6">
+                    <li class="flex items-center justify-center md:justify-start">
+                        <i class="fas fa-map-marker-alt mr-3"></i>
+                        <span class="text-sm">FLOVER THEORY ACADEMY<br>1234, OLIVE STREET,<br>CHENNAI - 021</span>
+                    </li>
+                    <li class="flex items-center justify-center md:justify-start">
+                        <i class="fas fa-envelope mr-3"></i>
+                        <a href="mailto:info@flovertheoryacademy.in" class="hover:text-gray-200 transition-colors duration-200 text-sm">Info@flovertheoryacademy.in</a>
+                    </li>
+                    <li class="flex items-center justify-center md:justify-start">
+                        <i class="fas fa-phone-alt mr-3 rotate-90"></i>
+                        <span class="text-sm">044-987-6785 5677</span>
+                    </li>
+                </ul>
+
+                <h3 class="text-xl font-bold mb-4 uppercase mt-8">Follow Us</h3>
+                <div class="flex justify-center md:justify-start space-x-6">
+                    <a href="#" class="social-icon text-2xl"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon text-2xl"><i class="fab fa-google"></i></a>
+                    <a href="#" class="social-icon text-2xl"><i class="fab fa-youtube"></i></a>
+                          <a href="#" class="social-icon text-2xl"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
